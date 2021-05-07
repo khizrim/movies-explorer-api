@@ -1,7 +1,7 @@
 # Movie Explorer API
 Backend of simple movie explorer app built with Node.js
 
-API is available on: [`https://api.movies-exlorer.khizrim.ru`](https://api.movies-exlorer.khizrim.ru)
+API is available on: [`https://api.movies-exlorer.khizrim.ru`](https://api.movies-explorer.khizrim.ru)
 
 Server's public IP: [`84.201.148.130`](http://84.201.148.130)
 ___
