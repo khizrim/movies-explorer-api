@@ -7,6 +7,6 @@ router.use('/', require('./access'));
 
 router.use('/users', validateCookies, auth, require('./users'));
 router.use('/movies', validateCookies, auth, require('./movies'));
-router.use('*', validateCookies, auth, require('./404'));
+router.use('*', require('./404'));
 
 module.exports = router;
