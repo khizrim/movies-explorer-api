@@ -59,13 +59,15 @@ const signUp = async (req, res, next) => {
   try {
     const hash = await bcrypt.hash(password, 10);
 
-    const user = User.create({
+    const user = await User.create({
       name,
       email,
       password: hash,
     });
 
-    res.send({ data: user.toJSON() });
+    res
+      .status(201)
+      .send({ data: user.toJSON() });
   } catch (err) {
     if (err.name === 'MongoError' && err.code === 11000) {
       next(new ConflictError(ERR_MSG.USER.EMAIL_ALREADY_USED));

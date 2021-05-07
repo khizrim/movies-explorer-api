@@ -47,7 +47,9 @@ const addMovie = async (req, res, next) => {
       owner: req.user._id,
     });
 
-    res.send({ data: movie });
+    res
+      .status(201)
+      .send({ data: movie });
   } catch (err) {
     if (err.name === 'MongoError' && err.code === 11000) {
       next(new ConflictError(ERR_MSG.MOVIES.MOVIE_ALREADY_ADDED));
