@@ -41,6 +41,10 @@ const editUserInfo = async (req, res, next) => {
 
     res.send({ data: user });
   } catch (err) {
+    if (err.name === 'MongoError' && err.code === 11000) {
+      next(new ConflictError(ERR_MSG.USER.EMAIL_ALREADY_USED));
+    }
+
     if (
       err.kind === 'ObjectId'
       || err.name === 'ValidationError'
