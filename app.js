@@ -28,7 +28,10 @@ app.use(requestLogger);
 
 app.use(limiter);
 app.use(helmet());
-app.use(cors());
+app.use(cors({
+  origin: 'https://movies-explorer.khizrim.ru',
+  credentials: true,
+}));
 app.use(express.json());
 app.use(cookieParser());
 
