@@ -9,7 +9,7 @@ const { ERR_MSG, RESPONSE_MSG } = require('../utils/constants');
 
 const getMovies = async (req, res, next) => {
   try {
-    const movies = await Movie.find({});
+    const movies = await Movie.find({ owner: req.user._id });
     res.send({ data: movies });
   } catch (err) {
     next(err);
