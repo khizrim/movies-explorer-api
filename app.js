@@ -29,7 +29,7 @@ app.use(requestLogger);
 app.use(limiter);
 app.use(helmet());
 app.use(cors({
-  origin: 'https://movies-explorer.khizrim.ru',
+  origin: 'http://localhost:3001',
   credentials: true,
 }));
 app.use(express.json());
