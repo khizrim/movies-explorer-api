@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "deploy": "rsync -r --exclude 'node_modules' ./* khizrim@178.154.212.251:/home/khizrim/backend",
+    "deploy": "rsync -r --exclude 'node_modules' ./* khizrim@84.201.150.202:/home/khizrim/backend",
     "lint": "eslint ."
   },
   "repository": {
